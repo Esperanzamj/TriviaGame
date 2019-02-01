@@ -1,6 +1,6 @@
 # TriviaGame
 
-Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Questions ranging from Sports, History, Science, & More!
+Localización al espalol del juego de cultura general, creado en JavaScript y jQuery, [TriviaGame](https://dantesta.github.io/TriviaGame/). 
 
-https://dantesta.github.io/TriviaGame/
+https://Esperanzamj.github.io/TriviaGame/
 
