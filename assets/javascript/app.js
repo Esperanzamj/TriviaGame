@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.game').hide();
   $('.results').hide();
 
-  
+
   var correct;
   var wrong;
   var answer;
@@ -23,34 +23,34 @@ $(document).ready(function() {
   function setQuestions() {
     questions = {
       q1: {
-        question: "Science: What is the third largest planet in the solar system?",
-        answer: 'Uranus',
-        choices: ['Neptune', 'Saturn', 'Uranus', 'Mars'],
+        question: "Ciencia: ¿Cuál es el tercer planeta más grande del sistema solar?",
+        answer: 'Urano',
+        choices: ['Neptuno', 'Saturno', 'Urano', 'Marte'],
       },
       q2: {
-        question: "History: Who was known as the Great Emancipator?",
+        question: "Historia: ¿Quién era conocido como el Gran Emancipador?",
         answer: 'Abraham Lincoln',
         choices: ['William Taft', 'James Garfield', 'George Washington', 'Abraham Lincoln'],
       },
       q3: {
-         question: "Sports: Who lost Super Bowl XL?",
+         question: "Deporte: ¿Qué equipo perdió la Super Bowl XL?",
         answer: 'Seattle Seahawks',
         choices: ['Seattle Seahawks', 'New England Patriots', 'Pittsburgh Steelers', 'Arizona Cardinals'],
       },
       q4: {
-         question: "Math: A Triangle has one right angle and a 45 degree angle. What is the degree of the remaining angle?",
+         question: "Matemáticas: Un triángulo tiene un ángulo recto y otro de 45 grados. ¿Cuántos grados tiene el ángulo restante?",
         answer: '45',
         choices: ['30', '45', '60', '90'],
       },
       q5: {
-          question: "History: Who is NOT on Mount Rushmore?",
+          question: "Historia: ¿Qué presidente NO está representado en el Monte Rushmore?",
         answer: 'Benjamin Franklin',
         choices: ['George Washington', 'Benjamin Franklin', 'Theodore Roosevelt', 'Thomas Jefferson'],
       },
       q6: {
-        question: "Sports: What is England's National Sport?",
-        answer: 'Cricket',
-        choices: ['Tennis', 'Soccer', 'Rugby', 'Cricket'],
+        question: "Deporte: ¿Cuál es el deporte nacional de Inglaterra?",
+        answer: 'Críquet',
+        choices: ['Tenis', 'Fútbol', 'Rugby', 'Críquet'],
       },
 
     };
@@ -63,13 +63,13 @@ $(document).ready(function() {
     time: 20,
     reset: function(t) {
       questionTimer.time = t;
-      $('.timeLeft').html('Time Left: ' + questionTimer.time);
+      $('.timeLeft').html('Tiempo restante: ' + questionTimer.time);
     },
     gameTimeout: function(){
       timeout = setTimeout(questionTimer.timeUp, 1000*16);
     },
     count: function() {
-      $('.timeLeft').html('Time Left: ' +questionTimer.time);
+      $('.timeLeft').html('Tiempo restante: ' +questionTimer.time);
       questionTimer.time--;
     },
     countDown: function(){
@@ -81,7 +81,7 @@ $(document).ready(function() {
     timeUp: function(){
       wrong++;
       questionTimer.reset(5)
-      $('.answers').html('<h2>Incorrect! The answer is ' + activeQuestion.answer + ' </h2>');
+      $('.answers').html('<h2>¡Incorrecto! La respuesta es ' + activeQuestion.answer + ' </h2>');
       setTimeout(game, 5000);
     },
   };
@@ -92,8 +92,8 @@ $(document).ready(function() {
       questionTimer.stopTimer();
       $('.game').hide();
       $('.results').show();
-      $('.correct').html('Number Correct: ' + correct);
-      $('.wrong').html('Number Incorrect: ' + wrong);
+      $('.correct').html('Respuestas correctas: ' + correct);
+      $('.wrong').html('Respuestas incorrectas: ' + wrong);
       activeQuestion = false;
     };
   };
@@ -102,10 +102,10 @@ $(document).ready(function() {
     if (answer == activeQuestion.answer && questionTimer.time > 0) {
       correct++;
       questionTimer.reset(3);
-      $('.answers').html('<h2>Correct! The answer is ' + activeQuestion.answer + ' </h2>');
-      setTimeout(game, 5000);   
+      $('.answers').html('<h2>¡Correcto! La respuesta es ' + activeQuestion.answer + ' </h2>');
+      setTimeout(game, 5000);
     }
-      
+
     if (answer != activeQuestion.answer){
       questionTimer.timeUp();
     }
@@ -113,8 +113,8 @@ $(document).ready(function() {
 
 
   function randomQuestions() {
-    activeQuestion.choices.sort(function() { 
-      return 0.5 - Math.random(); 
+    activeQuestion.choices.sort(function() {
+      return 0.5 - Math.random();
     });
   };
 
@@ -160,7 +160,7 @@ $(document).ready(function() {
       i++;
 
       });
-    }; 
+    };
 
 
     $('.option').on('click', function(){
@@ -178,23 +178,13 @@ $(document).ready(function() {
     $('.game').show();
   }
 
- 
+
   $('.home').on('click','.start',function(){
     setQuestions();
     newGame();
-    
+
     game();
   });
-    
+
 
 });
-
-
-
-
-
-
-
-
-
-
