@@ -81,7 +81,7 @@ $(document).ready(function() {
     timeUp: function(){
       wrong++;
       questionTimer.reset(5)
-      $('.answers').html('<h2>¡Incorrecto! La respuesta es ' + activeQuestion.answer + ' </h2>');
+      $('.answers').html('<h2>¡Incorrecto! La respuesta es ' + activeQuestion.answer + ' .</h2>');
       setTimeout(game, 5000);
     },
   };
@@ -102,7 +102,7 @@ $(document).ready(function() {
     if (answer == activeQuestion.answer && questionTimer.time > 0) {
       correct++;
       questionTimer.reset(3);
-      $('.answers').html('<h2>¡Correcto! La respuesta es ' + activeQuestion.answer + ' </h2>');
+      $('.answers').html('<h2>¡Correcto! La respuesta es ' + activeQuestion.answer + ' .</h2>');
       setTimeout(game, 5000);
     }
 
